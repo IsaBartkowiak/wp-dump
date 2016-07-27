@@ -11,7 +11,7 @@
 #     wdHelp
 #       Display this message.
 #
-#     wdBackup [oldDomain newDomain]
+#     wdBackup [oldDomain] [newDomain]
 #       Dump the database. If [oldDomain newDomain] are set, oldDomain will be replaced by 
 #       newDomain into the sql file, used for migration.
 #       oldDomain (optional) full url of the existing domain
@@ -175,7 +175,7 @@ function ask {
 function wdHelp {
     echo "WP Dump shell help.
 
-     wdBackup [oldDomain newDomain]
+     wdBackup [oldDomain] [newDomain]
         Dump the database. If [oldDomain newDomain] are set,
         oldDomain will be replaced by newDomain into the sql file.
 
