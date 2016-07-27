@@ -3,28 +3,21 @@ Wordpress sql dump shell script
 
 This shell script was created for **backup**, **restore** and **migrate** the database of your wordpress websites with command line.
 
-----------
-
-
 ##Installation
 Copy the content of the bin folder at the root of your wordpress website
 
-----------
-
 ##How to
 
-----------
-
 To use this file, you must be at the root of a wp folder and source it: 
-```javascript
+```sh
 $ source bin/wp_dump.sh
 ```
 ###Available commands :
-```
+```sh
 $ wdHelp
 ```
 Display help
-```php
+```sh
 $ wdBackup [oldDomain] [newDomain]
 ```
 Dump the database into a sql file with the format **dump_F_H-M-S .sql** .
@@ -32,7 +25,7 @@ If the 2 parameters are set, oldDomain **will be replaced by newDomain into the 
 `oldDomain` (optional) full url of the existing domain
 `newDomain` (optional)  full url of the new domain
 
-```php
+```sh
 $ wdRestore pathToSqlFile || last
 ```
  Restore a sql file into the database or restore the last dump created
