@@ -47,13 +47,17 @@ function setConstants {
     fi
 }
 
+
+
 function atmSetup {
     if [ -z "$SETUP" ]; then
         # export constants
         export SETUP=1
         export NOW=`date +%F_%H-%M-%S`
         #create folder
-        mkdir -p $BACKUP_FOLDER   
+        mkdir -p $BACKUP_FOLDER
+        echo  'Deny from all' > backup/.htaccess
+
         #check if we are on root of wp project
         checkLocation || return 1
         #set access constants
@@ -167,25 +171,25 @@ function ask {
         fi
         case "$answer" in
             "y" | "Y" ) return 1;;
-            "n" | "N" ) return 0;;
-            "" ) wrong_answer=1;; esac
-    done
+"n" | "N" ) return 0;;
+"" ) wrong_answer=1;; esac
+done
 }
 
 function wdHelp {
     echo "WP Dump shell help.
 
-     wdBackup [oldDomain] [newDomain]
-        Dump the database. If [oldDomain newDomain] are set,
-        oldDomain will be replaced by newDomain into the sql file.
+    wdBackup [oldDomain] [newDomain]
+    Dump the database. If [oldDomain newDomain] are set,
+    oldDomain will be replaced by newDomain into the sql file.
 
-        oldDomain (optional) full url of the existing domain
-        newDomain (optional)  full url of the new domain
+    oldDomain (optional) full url of the existing domain
+    newDomain (optional)  full url of the new domain
 
-     wdRestore pathToSqlFile || last
-        Restore a sql file into the database or restore the last dump created
+    wdRestore pathToSqlFile || last
+    Restore a sql file into the database or restore the last dump created
 
-        pathToSqlFile    The sql file to load.
-        last If you set last as pathToSqlFile, restore the last sql file created
+    pathToSqlFile    The sql file to load.
+    last If you set last as pathToSqlFile, restore the last sql file created
     "
 }
