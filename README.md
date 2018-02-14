@@ -4,7 +4,8 @@ Wordpress SQL backups CLI
 This shell script allows you to **backup**, **restore** and **migrate** the database of your wordpress websites though command line.
 
 ## Quick demo
-###Create wordpress sql backup
+
+### Create wordpress sql backup
 ![Create sql backup](https://lh3.googleusercontent.com/Q8elOF4qtQOwFvLCd8TJO6Oja2EkM10axEGh-ZGUTZNwpAOQQ7RsBSiXiT45o-lCruSoONuR=s0 "wp-backup1.jpg")
 
 ### Create wordpress sql migration backup
